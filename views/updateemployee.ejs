@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+        input{
+            padding: 10px;
+            font-size: 18px;
+            margin: 2px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 style="font-size: 50px;" align="center"><%= title %></h1>
+    <div style="text-align: center; margin-top: 40px; margin-left: 450px ;border: 2px solid black; width: 500px;padding: 20px;">
+        <% if(row != ''){ %>
+        <form action="/updateEmployee/edit/<%= row._id %>" method="POST" role="form">
+            ServiceNo. <input type="text" name="serviceno" value="<%= row.serviceno %>" required><br>
+            Name <input type="text" name="name" value="<%= row.name %>" required><br>
+            Address <input type="text" name="address" value="<%= row.address %>" required><br>
+            Post <input type="text" name="post" value="<%= row.post %>" required><br>
+            Join Year <input type="text" name="joinyear" value="<%= row.joinyear %>" required><br>
+            Password <input type="password" name="password" value="<%= row.password %>" required><br>
+            Base Salary <input type="text" name="basesalary" value="<%= row.basesalary %>" required><br>
+            Daily Allounce <input type="text" value="0" name="dailyallounce"><br>
+            HRA <input type="text" value="0" name="hra"><br>
+            Extras<input type="text" value="0" name="extras"><br>
+            Absent Deduction<input type="text" value="0" name="absentdeduction"><br>
+            <input type="submit" value="Update">
+         </form>
+         <% } %>
+    </div>
+  </body> 
+</html>

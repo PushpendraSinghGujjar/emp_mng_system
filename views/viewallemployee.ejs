@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+            font-size: 15px;
+            overflow-x: auto;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 style="font-size: 50px;" align="center"><%= title %></h1>
+    <% if(msg != ''){ %>
+        <p style="text-align: center;color: red;"><%= msg %></p>
+        <% } %>
+    <div style="text-align: center; margin-top: 100px; margin-left: 10px ; padding: 20px;">
+        <table>
+            <tr>
+                <th>Service NO.</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Post</th>
+                <th>Join Year</th>
+                <th>Password</th>
+                <th>Base Salary</th>
+                <th>daily Allounce</th>
+                <th>HRA</th>
+                <th>Extras</th>
+                <th>Absent DEduction</th>
+                <th>Service Tax</th>
+                <th>Total Amount</th>
+                <th>Payment Amount</th>
+                <th>Action</th>
+            </tr>
+            <% if(data.length > 0){
+                data.forEach((row) => {
+                 %>
+                 <tr>
+                     <td><%= row.serviceno %></td>
+                     <td><%= row.name %></td>
+                     <td><%= row.address %></td>
+                     <td><%= row.post %></td>
+                     <td><%= row.joinyear %></td>
+                     <td><%= row.password %></td>
+                     <td><%= row.basesalary %></td>
+                     <td><%= row.dailyallounce %></td>
+                     <td><%= row.hra %></td>
+                     <td><%= row.extras %></td>
+                     <td><%= row.absentdeduction %></td>
+                     <td><%= row.servicetax %></td>
+                     <td><%= row.totalamount %></td>
+                     <td><%= row.paymentamount %></td>
+                     <td><a href="/updateEmployee/edit/<%= row._id %>">Edit</a> <a href="/viewAllEmployee/delete/<%= row._id %>" style="color: red;">Delete</a></td>
+                 </tr>
+                 <% })} %>
+        </table>
+     </div>
+  </body> 
+</html>

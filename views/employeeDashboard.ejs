@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 style="font-size: 50px;" align="center"><%= title %></h1>
+    <div style="text-align: center; margin-top: 100px; margin-left: 450px ;border: 2px solid black; width: 500px; padding: 10px;">
+        <h3>Employee Details</h1>
+            <% if(data != ''){ %>
+        <table>
+                <tr>
+                    <th>Service NO.</th>
+                    <td><%= data.serviceno %></td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td><%= data.name %></td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td><%= data.address %></td>
+                </tr>
+                <tr>
+                    <th>Post</th>
+                    <td><%= data.post %></td>
+                </tr>
+                <tr>
+                    <th>Join Year</th>
+                    <td><%= data.joinyear %></td>
+                </tr>
+                <tr>
+                    <th>Base Salary</th>
+                    <td><%= data.basesalary %></td>
+                </tr>
+                <tr>
+                    <th>Daily Allounce</th>
+                    <td><%= data.dailyallounce %></td>
+                </tr>
+                <tr>
+                    <th>HRA</th>
+                    <td><%= data.hra %></td>
+                </tr>
+                <tr>
+                    <th>Extras</th>
+                    <td><%= data.extras %></td>
+                </tr>
+                <tr>
+                    <th>Absent Deduction</th>
+                    <td><%= data.absentdeduction %></td>
+                </tr>
+                <tr>
+                    <th>Service Tax</th>
+                    <td><%= data.servicetax %></td>
+                </tr>
+                <tr>
+                    <th>Total Amount</th>
+                    <td><%= data.totalamount %></td>
+                </tr>
+                <tr>
+                    <th>Payment Amount</th>
+                    <td><%= data.paymentamount %></td>
+                </tr>
+            </tr>
+            </table>
+            <% } %>
+    </div>
+  </body>  
+</html>

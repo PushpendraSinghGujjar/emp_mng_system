@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 style="font-size: 50px;" align="center"><%= title %></h1>
+    <div style="text-align: center; margin-top: 100px; margin-left: 450px ;border: 2px solid black; width: 500px;padding: 20px;">
+     <form action="/addEmployee" method="POST" role="form">
+        <% if(msg != ''){ %>
+            <p style="text-align: center; color: blue;"><%= msg %></p>
+         <% } %>
+        ServiceNo. <input type="text" name="serviceno" required>
+        Name <input type="text" name="name" required>
+        Address <input type="text" name="address" required>
+        Post <input type="text" name="post" required>
+        Join Year <input type="text" name="joinyear" required>
+        Password <input type="password" name="password" required>
+        Base Salary <input type="text" name="basesalary" required>
+        <input type="submit" value="Add">   
+      </form>
+    </div>
+  </body> 
+</html>

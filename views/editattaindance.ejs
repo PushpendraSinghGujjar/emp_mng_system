@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><% if(msg !== ''){%>
+         <p style="color: green;"><%= msg %></p>
+    <%}%>
+    <input type="hidden" name="name" value=<%= emp.name %>>
+    <strong>Name</strong><%= emp.name %><br>
+    <strong>Service No.</strong><%= emp.serviceno %>
+    <table>
+        <tr>
+           <th>Date</th>
+           <th>Attaindance</th>
+        </tr>
+
+        <% if(att.length> 0) {%>
+            <% att.map((attain)=> {%>
+                <tr>
+                    <td><%= attain.dateInfo %></td>
+                    <td><%= attain.attaindance %></td>
+                </tr>
+                <% })} %>
+    </table>
+    <br><br>
+    <form action="/enterAttaindance/edit/<%= emp.serviceno %>" method="POST" role="form">
+        <input type="hidden" name="name" value=<%= emp.name %>>
+        Attaindance: <input type="text" name="attaindance" >
+        <button type="submit" value="submit">Submit</button>
+    </form>
+</body>
+</html>

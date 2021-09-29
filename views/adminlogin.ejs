@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 style="font-size: 50px;" align="center"><%= title %></h1>
+    <div style="text-align: center; margin-top: 100px; margin-left: 450px ;border: 2px solid black; width: 500px; padding: 10px;">
+        <form action="/adminLogin" method="POST" role="form">
+            <h2> Admin Login </h2>
+            <input style="margin: 5px; padding: 10px; font-size: 16px;" type="text" name="username" placeholder="Username" required><br>
+            <input style="margin: 5px; padding: 10px; font-size: 16px;" type="password" name="password" placeholder="Password" required><br>
+            <input style="margin: 5px; padding: 10px; font-size: 16px;" type="submit" value="Login">
+        </form>
+    </div>
+  </body>  
+</html>
